@@ -1,0 +1,25 @@
+  nav ul li:nth-child(1) a::after {
+    content: "Эхлэл"; 
+  }
+
+  nav ul li:nth-child(2) a::after {
+    content: "Тухай";
+  }
+
+  nav ul li:nth-child(3) a::after {
+    content: "Цэс";
+  }
+
+  nav ul li:nth-child(4) a::after {
+    content: "Холбогдох";
+  }
+
+.line, .section{
+  display: flex;
+  flex-direction: column;
+}
+.textSide{
+    padding-top: 0;
+}
+
+.sectImg{width: 100%;}
