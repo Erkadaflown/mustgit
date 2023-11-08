@@ -16,22 +16,23 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Login extends AppCompatActivity {
-    DatabaseReference databaseReference;
 
-    EditText mobile, password;
+    DatabaseReference databaseReference =
+            FirebaseDatabase.getInstance().getReferenceFromUrl("https://loginregistercc882-default-rtdb.firebaseio.com/");
+
+    EditText mobile;  // Change variable name
+    EditText password; // Change variable name
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize the database reference
-        databaseReference = FirebaseDatabase.getInstance().getReference("users");
-
-        mobile = findViewById(R.id.mobile);
+        mobile = findViewById(R.id.mobile); // Update variable assignments
         password = findViewById(R.id.password);
-        Button loginBtn = findViewById(R.id.loginBtn);
-        TextView registerNowBtn = findViewById(R.id.registerNowBtn);
+
+        final Button loginBtn = findViewById(R.id.loginBtn);
+        final TextView registerNowBtn = findViewById(R.id.registerNowBtn);
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,14 +42,14 @@ public class Login extends AppCompatActivity {
                 if (phoneTxt.isEmpty() || passwordTxt.isEmpty()) {
                     Toast.makeText(Login.this, "Please enter your mobile and password", Toast.LENGTH_SHORT).show();
                 } else {
-                    databaseReference.child(phoneTxt).addListenerForSingleValueEvent(new ValueEventListener() {
+                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if (snapshot.exists()) {
-                                String getPassword = snapshot.child("password").getValue(String.class);
+                            if (snapshot.hasChild(phoneTxt)) {
+                                final String getPassword = snapshot.child(phoneTxt).child("password").getValue(String.class);
                                 if (getPassword != null && getPassword.equals(passwordTxt)) {
                                     Toast.makeText(Login.this, "Successfully logged in", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(Login.this, MainActivity.class));
+                                    startActivity(new Intent(Login.this, MainActivity.class);
                                     finish();
                                 } else {
                                     Toast.makeText(Login.this, "Wrong password", Toast.LENGTH_SHORT).show();
@@ -60,6 +61,7 @@ public class Login extends AppCompatActivity {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(Login.this, "Database Error", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

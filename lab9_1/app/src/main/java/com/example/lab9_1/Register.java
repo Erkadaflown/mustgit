@@ -16,16 +16,13 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Register extends AppCompatActivity {
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference =
+            FirebaseDatabase.getInstance().getReferenceFromUrl("https://loginregistercc882-default-rtdb.firebaseio.com/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        // Initialize the database reference
-        databaseReference = FirebaseDatabase.getInstance().getReference("users");
-
         final EditText name = findViewById(R.id.name);
         final EditText email = findViewById(R.id.email);
         final EditText mobile = findViewById(R.id.mobile);
@@ -49,17 +46,15 @@ public class Register extends AppCompatActivity {
                 } else if (!passwordTxt.equals(conpasswordTxt)) {
                     Toast.makeText(Register.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                 } else {
-                    databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if (snapshot.hasChild(mobileTxt)) {
                                 Toast.makeText(Register.this, "Phone is already registered", Toast.LENGTH_SHORT).show();
                             } else {
-                                DatabaseReference userReference = databaseReference.child(mobileTxt);
-                                userReference.child("name").setValue(nameTxt);
-                                userReference.child("email").setValue(emailTxt);
-                                userReference.child("password").setValue(passwordTxt);
-
+                                databaseReference.child("users").child(mobileTxt).child("name").setValue(nameTxt);
+                                databaseReference.child("users").child(mobileTxt).child("email").setValue(emailTxt);
+                                databaseReference.child("users").child(mobileTxt).child("password").setValue(passwordTxt);
                                 Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(Register.this, MainActivity.class);
                                 finish();
@@ -68,6 +63,7 @@ public class Register extends AppCompatActivity {
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(Register.this, "Database Error", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
