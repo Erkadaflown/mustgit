@@ -15,7 +15,7 @@ def count_possible_vaccines(coronavirus_representation):
 
     return possible_vaccines
 
-coronavirus_representation = input("Enter the decimal representation of the coronavirus: ")
+coronavirus_representation = input("Corono virusiin decimal utgiig oruulna u: ")
 
 possible_vaccines_count = count_possible_vaccines(coronavirus_representation)
-print("Number of available vaccines:", possible_vaccines_count)
+print("Vaccatsinii too:", possible_vaccines_count)

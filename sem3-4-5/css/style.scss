@@ -154,7 +154,7 @@ h2{
 
 .menu {
   display: grid;
-  grid-template-columns: auto auto; // Two columns with equal width
+  grid-template-columns: auto auto;
   justify-content: space-between;
   p{
       @include bolding;
