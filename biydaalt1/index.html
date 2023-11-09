@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Erka AI</title>
+</head>
+
+<body>
+  <div 
+    id="rasa-chat-widget" 
+    data-websocket-url="http://localhost:5005/"  
+    data-height=475>
+  </div>
+  <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>E</span>rka   <span>  A</span>I</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#hero" data-after="Home" >Нүүр</a></li>
+            <li><a href="#services" data-after="Service">Чадварууд</a></li>
+            <li><a href="#projects" data-after="Projects">Төслүүд</a></li>
+            <li><a href="#about" data-after="About">Миний тухай</a></li>
+            <li><a href="#contact" data-after="Contact">Холбогдох</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h1>Намайг <span></span></h1>
+        <h1>Эрхэмхүү <span></span></h1>
+        <h1>гэдэг би бол <span></span></h1>
+        <h1>AI & ML инженер <span></span></h1>
+        <a href="#projects" type="button" class="cta">Төслүүд</a>
+      </div>
+      <div style="margin-left:200px ; width: 50vh; height: 50vh; border: 2px solid black; border-radius: 50%; overflow: hidden;">
+        <img src="/img/pro.png" alt="Your Image" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+  <section id="services">
+    <div class="services container">
+      <div class="service-top">
+        <h1 class="section-title">Чад<span>вар</span>ууд</h1>
+        <p>Миний бие хиймэл оюун ухаан, машин сургалтын талбарт суралцаж ажилдаг. Мөн бизнесийн болон өргөн хүрээний багийн төсөлд хувь нэмрээ оруулах, үнэ цэнэ хариуцах, амжилттай гүйцэтгэх чадвартай. Нарийн төвөгтэй асуудлуудыг шийдвэрлэх, инновацийг хөгжүүлэх, олон улсын давцанд   ажиллах хүсэлтэй.</p>
+      </div>
+      <div class="service-bottom">
+        <div class="service-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
+          <h2>Хиймэл оюун ухаан</h2>
+          <p>Зохиомол оюун нь компьютерын програм хангамжаар бүтээгдсэн хүний сэтгэхүйг дууриалгасан ба бараг ижил түвшинд хүргэсэн технологийн төрөл ба аливаа хүний хийдэг үйл ажиллагааг удирдахад зориулагддаг болно</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
+          <h2>Машин сургалт</h2>
+          <p>Машины сургалт нь өгөгдсөн ажлыг эсвэл мэдээллийг тусгай зааварчилгаа буюу програм ашиглалгүйгээр тодорхой алгоритмууд ба статистик загварууд ашиглан тухайн өгөгдөлийг боловсруулан шинжлэх юм.</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
+          <h2>Full stack Developer</h2>
+          <p>HTML, CSS, JavaScrift, Java, Python, Assembly гэх мэт бүх төрлийн Front, Back-end код бичих, Мөн API, Database(MySql, NoSql, Mongodb) гэх мэт бүх төрлийн үүрэг гүйцэтгэнэ6</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
+          <h2>Төслийн менежер</h2>
+          <p>Agile аргачлал дээр Scrum master хийж байсан туршлагатай багаар ажиллах, баг удирдан зохион байгуулах. Миний бие дан програм хангамж бус биснес чиглэлээр бие дааж суралцдаг тул төсөл ажлийг том зургаар харж ашиг үр дүнд хүргэх чадамжтай. </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Service Section -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="section-title">Хийж байгаа болон дууссан <span>ажлууд</span></h1>
+      </div>
+      <div class="all-projects">
+        <div class="project-item">
+          <div class="project-info">
+            <h1><a href="./ai car/uhaalag-mashin/src/index.html" target="_blank">Ухаалаг машин</a></h1>
+            <h2>Project NN car</h2>
+            <p>Хиймэл оюун ухаан дээр суурилсан Neural Network ашиглан замын өгөгдөл 
+              дээр үндэслэн явах чиглэлээ өөрчилөн явах жолоочгүй машины жишээ юм. Жолоочгүй машин нь бидний амьдралын нэг хэсэг болоход тун ойрхон байна
+            </p>
+          </div>
+          <div class="project-img">
+            <img src="./img/aicar.png" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1><a href="./web/3D-mars/index.html" target="_blank">3D Mars</a></h1>
+            <h2>Project Node TreeJS WEB</h2>
+            <p>HTML,CSS,JavaScrift ашиглан хялбар WEB хийж болдог билээ. Тэгвэл NodeJS тэр дундаа TreeJS гэх сан нь 3D дүрс биетүүдийг хөдөлгөх бодит орчинг үүсгэх боломжийг бидэнд олгож байна.</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/3dweb.png" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1><a href="api/api.html" target="_blank">API Connection</a></h1>
+            <h2>Project API</h2>
+            <p>Аппликейшн програмчлалын интерфейс (API) буюу АПИ нь нэг аппликейшн хэрхэн өөр аппликейшнтэй харилцан ажиллахыг тодорхойлох дүрмийн олонлогийг агуулдаг. Үүнд програм хангамжийг байгуулах хэрэгслүүд, протоколууд, subroutine-ууд агуулагдана.</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/api.png" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1><a href="project/project2.pdf" target="_blank">Төсөл хөгжүүлэх</a></h1>
+            <h2>Програм хангамжийн процесс</h2>
+            <p>Процессийг үүсгэх тайлбарлах, өгөгдлийн
+              загварыг тодорхойлох, хэрэглэгчийн интерфэйсийн
+              зохиох, эдгээр үйл ажиллагааг эрэмбэлэх, тайлан бэлдэх мөн Agile, хүрхрээ, нэмэгдэх гэх мэт аргыг ашиглан хөгжүүлэх.
+              </p>
+          </div>
+          <div class="project-img">
+            <img src="./img/tusul.png" alt="img">
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-info">
+            <h1><a href="volunteer/volunteer.html" target="_blank">Сайн дурын ажил</a></h1>
+            <h2>Volunteer</h2>
+            <p>Hard skill-ээс гадна хувь хүний чадамж бололцоог дэмждэг, шинийг сурах боломж олгодог зүйлсийн нэг бол сайн дурын ажил юм. Иймд Soft skill-ээ хөгжүүлэх багаар ажиллах чадамжаа дээшлүүлэх хүн хоорондын харилцааг судлах гэх мэт маш олон зүйлс суралцах боломж олгодог.</p>
+          </div>
+          <div class="project-img">
+            <img src="./img/ict.png" alt="img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container">
+      <div class="col-left">
+        <div class="about-img">
+          <img src="./img/pro.png" alt="img">
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title">Миний <span>тухай</span></h1>
+        <h2>Хиймэл оюун ухааны инженер</h2>
+        <p>Миний нэрийг Эрхэмхүү гэдэг би 2003 онд төрсөн. Бага байх үеэс компьютер тоглоомд дуртай тул бага багаар 
+          тухайн салбарт татагдаж орсон. Иймд 2021 онд ШУТИС-ийн Хиймэл оюун ухаан чиглэлээр суралцаж(одоо ч суралцаж байгаа).
+          Суралцах хугацаандаа давхар олон төрлийн ажил хийдэг байсан бөгөөд тэр дундаас хамгийн таалагдсан нь Бизнес судлал 
+          байсан. Иймд IT-ийн чадвартай хослуулан цаашид ажиллах хүсэлтэй.
+        </p>
+        <a href="/Уртнасан Эрхэмхүү.pdf" class="cta" target="_blank">CV татах</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Холбоо <span>барих</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Утас</h1>
+            <h2>+976 94686785</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>shinomiyaerka@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Хаяг</h1>
+            <h2>УБ, ЧД 4-р хороо 16-р байр</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="https://www.facebook.com/shinoedesu/"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.instagram.com/__shinoe__/"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="https://www.linkedin.com/in/erkhemkhuu-urtnasan-326b6b261/"><img src="https://img.icons8.com/bubbles/100/000000/linkedin.png" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2023 Erka. All rights reserved</p>  
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./index.js"></script>
+</body>
+
+</html>
