@@ -1,0 +1,40 @@
+version: "3.1"
+
+stories:
+
+- story: simple utter
+  steps:
+  - intent: utter_intent
+  - action: utter_response
+
+- story: simple google sheet action use
+  steps:
+  - intent: what_is_x
+  - action: simple_google_sheet_or_chatgpt_action
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
