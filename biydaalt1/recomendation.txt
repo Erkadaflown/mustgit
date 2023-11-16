@@ -1,0 +1,9 @@
+conda create --name myenv python=3.8
+conda activate myenv
+pip install openai==0.4.0
+pip install pandas==1.1.5
+pip install pathlib==1.0.1
+pip install requests==2.25.1
+pip install ruamel.yaml==0.16.12
+pip install rasa
+rasa init
