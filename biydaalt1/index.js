@@ -50,6 +50,20 @@ function scrollToBottom() {
 	chatbox.scrollTop = chatbox.scrollHeight;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+
+	const sendButton = document.getElementById('sendButton');
+	if (sendButton) {
+	  sendButton.textContent = 'Эрка-руу чат явуулах';
+	}
+  
+	const messageInput = document.getElementById('userInput');
+	if (messageInput) {
+	  messageInput.placeholder = 'aliv manitaiga heden ym yrilda';
+	}
+  });
+  
+
 const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
 const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
 const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');

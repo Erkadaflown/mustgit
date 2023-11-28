@@ -15,4 +15,4 @@ rules:
 - rule: out-of-scope
   steps:
   - intent: nlu_fallback
-  - action: action_gpt_default_fallback
+  - action: utter_idk

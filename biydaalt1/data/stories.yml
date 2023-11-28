@@ -9,7 +9,7 @@ stories:
 
 - story: simple google sheet action use
   steps:
-  - intent: what_is_x
+  - intent: what_is_x 
   - action: simple_google_sheet_or_chatgpt_action
 
 - story: happy path
@@ -38,3 +38,10 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: heruul
+  steps:
+  - intent : greet
+  - action : utter_greet
+  - intent : curse
+  - action : utter_haraal

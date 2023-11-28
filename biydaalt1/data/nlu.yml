@@ -2,19 +2,6 @@ version: "3.1"
 
 nlu:
 
-- intent: utter_intent
-  examples: |
-    - can you utter?
-    - do you know how to utter?
-    - show me an example of utter?
-    - how to utter?
-    
-- intent: what_is_x
-  examples: |
-    - what is a [dog](object_entity)?
-    - what is a [chair](object_entity)?
-    - what a [dog](object_entity) is?
-    - what a [chair](object_entity) is
 - intent: greet
   examples: |
     - hey
@@ -30,6 +17,10 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - sain bnu
+    - sain u
+    - yu bn da
+    - yu bnda
 
 - intent: goodbye
   examples: |
@@ -43,6 +34,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - bayrtai
 
 - intent: affirm
   examples: |
@@ -52,6 +44,10 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - ok
+    - za
+    - tiim
+    - thh
 
 - intent: deny
   examples: |
@@ -62,6 +58,8 @@ nlu:
     - don't like that
     - no way
     - not really
+    - ugui
+    - gui
 
 - intent: mood_great
   examples: |
@@ -103,3 +101,13 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - chamaig hen buteesen be
+
+- intent: curse
+  examples: |
+    - psda
+    - sda
+    - lalar
+    - zail
+    - gici
+

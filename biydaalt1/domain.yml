@@ -10,6 +10,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - curse
 
 entities:
   - object_entity
@@ -20,23 +21,29 @@ responses:
   - text: "This is direct utter, no custom action" 
 
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey yu bnda bro?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - text: "Zgrde bro bi chamaig setgeleer demjine <3"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Ene chamd tus bolov u?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Nice bro!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Bye2 bro"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Bi bol Erka giin fb chat data deer suurilsan bot haraal edr helj magadgui shu"
+
+  utter_haraal:
+  - text: "chi nadtai hereldeel te unen davartsan ***"
+  
+  utter_idk:
+  - text: "Medehguie bro manid ni odoohondo data alga"
 
 actions:
 - utter_response
