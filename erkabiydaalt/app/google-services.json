@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "556305409081",
+    "firebase_url": "https://biydaalt1erka-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "biydaalt1erka",
+    "storage_bucket": "biydaalt1erka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556305409081:android:406fc6379dd970ca6e99e8",
+        "android_client_info": {
+          "package_name": "com.example.erkabiydaalt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4ZXtS2nf2UtM9345l0kOlSgZ4onjKkow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

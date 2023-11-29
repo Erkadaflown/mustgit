@@ -1,14 +1,25 @@
-<!-- activity_register.xml -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBackgroundRegister"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/download" />
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"/>
+        android:hint="Нэр"
+        android:textColorHint="#80FFFFFF"
+        android:layout_marginTop="150dp"
+        android:paddingBottom="25dp"
+        android:paddingLeft="25dp"
+        android:textColor="@color/white"
+        android:paddingRight="25dp"/>
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -16,7 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextName"
         android:layout_marginTop="8dp"
-        android:hint="Phone"/>
+        android:hint="Утасны дугаар"
+        android:textColorHint="#80FFFFFF"
+        android:padding="25dp"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/editTextPassword"
@@ -25,7 +39,10 @@
         android:layout_below="@id/editTextPhone"
         android:layout_marginTop="8dp"
         android:inputType="textPassword"
-        android:hint="Password"/>
+        android:hint="Цууц үг"
+        android:textColorHint="#80FFFFFF"
+        android:textColor="@color/white"
+        android:padding="25dp"/>
 
     <RadioGroup
         android:id="@+id/radioGroupGender"
@@ -33,19 +50,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPassword"
         android:layout_marginTop="8dp"
+        android:padding="25dp"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButtonMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"/>
+            android:textColor="@color/white"
+            android:buttonTint="@color/radioButtonColor"
+            android:text="Эрэгтэй"/>
 
         <RadioButton
             android:id="@+id/radioButtonFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female"/>
+            android:textColor="@color/white"
+            android:buttonTint="@color/radioButtonColor"
+            android:text="Эмэгтэй"/>
+
     </RadioGroup>
 
     <Button
@@ -54,7 +77,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/radioGroupGender"
         android:layout_marginTop="16dp"
-        android:text="Register"/>
+        android:text="Бүртгүүлэх"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:backgroundTint="#40CCCCCC"
+        android:radius="8dp"/>
 
     <Button
         android:id="@+id/buttonLoginFromRegister"
@@ -62,5 +89,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonRegister"
         android:layout_marginTop="8dp"
-        android:text="Login"/>
+        android:text="Нэвтрэх"
+        android:backgroundTint="#40CCCCCC"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:radius="8dp"/>
 </RelativeLayout>

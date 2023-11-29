@@ -1,16 +1,14 @@
-package com.example.biydaalt1;
-
+package com.example.erkabiydaalt;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -66,16 +64,14 @@ public class RegisterActivity extends AppCompatActivity {
         final String password = editTextPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(phone) || TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Мэдээллийг дутуу бөглөсөн байна", Toast.LENGTH_SHORT).show();
         } else {
-            // Get selected gender from radio group
+
             int selectedRadioButtonId = radioGroupGender.getCheckedRadioButtonId();
             String gender = getGenderFromRadioButtonId(selectedRadioButtonId);
 
-            // Generate a unique email address for each user
             final String email = generateUniqueEmail(phone);
 
-            // Check if the email is already in use
             firebaseAuth.fetchSignInMethodsForEmail(email)
                     .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                         @Override
@@ -83,44 +79,42 @@ public class RegisterActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 SignInMethodQueryResult result = task.getResult();
                                 if (result != null && result.getSignInMethods() != null && !result.getSignInMethods().isEmpty()) {
-                                    // Generic error message to avoid exposing too much information
-                                    Toast.makeText(RegisterActivity.this, "Registration failed. Please try again.", Toast.LENGTH_SHORT).show();
+
+                                    showErrorMessage("Бүртгэхэд алдаа гарлаа дараа дахин оролдоно уу.");
                                 } else {
-                                    // Email is not in use, proceed with registration
+
                                     firebaseAuth.createUserWithEmailAndPassword(email, password)
                                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                                     if (task.isSuccessful()) {
                                                         String userId = firebaseAuth.getCurrentUser().getUid();
-                                                        User user = new User(name, phone);
+                                                        User user = new User(name, phone, gender);
 
-                                                        // Save user data to Firebase Database
                                                         databaseReference.child(userId).setValue(user)
                                                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                                     @Override
                                                                     public void onComplete(@NonNull Task<Void> task) {
                                                                         if (task.isSuccessful()) {
-                                                                            Toast.makeText(RegisterActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
+                                                                            Toast.makeText(RegisterActivity.this, "Амжилттай бүртгэлээ!", Toast.LENGTH_SHORT).show();
                                                                             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                                                             finish();
                                                                         } else {
-                                                                            Toast.makeText(RegisterActivity.this, "Failed to save user data", Toast.LENGTH_SHORT).show();
+                                                                            showErrorMessage("Хэрэглэгчийн мэдээллийг хадгалхад алдаа гарлаа");
                                                                         }
                                                                     }
                                                                 });
                                                     } else {
-                                                        // Handle different registration failures
+
                                                         if (task.getException() != null) {
-                                                            Log.e("RegisterActivity", "Registration failed: " + task.getException().getMessage());
-                                                            Toast.makeText(RegisterActivity.this, "Registration failed. Please try again.", Toast.LENGTH_SHORT).show();
+                                                            showErrorMessage("Бүртгэл хийхэд алдаа гарлаа: " + task.getException().getMessage());
                                                         }
                                                     }
                                                 }
                                             });
                                 }
                             } else {
-                                Toast.makeText(RegisterActivity.this, "Error checking email availability", Toast.LENGTH_SHORT).show();
+                                showErrorMessage("Бүртгэл шалгахад алдаа гарлаа");
                             }
                         }
                     });
@@ -140,5 +134,10 @@ public class RegisterActivity extends AppCompatActivity {
     private String generateUniqueEmail(String phone) {
         // Generate a unique email address based on the phone number
         return phone + "@example.com";
+    }
+
+    private void showErrorMessage(String message) {
+        Log.e("RegisterActivity", message);
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
