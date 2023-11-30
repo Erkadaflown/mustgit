@@ -50,7 +50,6 @@ public class LoginActivity extends AppCompatActivity {
 
         ImageView imageViewBackground = findViewById(R.id.imageViewBackground);
 
-
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,19 +1,305 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
-    tools:context=".HomeActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome!"
-        android:layout_centerInParent="true"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/women"
+        android:scaleType="centerCrop" />
 
+    <RelativeLayout
+        android:id="@+id/rectangle_container"
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/rounded_rectangle">
+
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:text="Өдөр 01 - Халаалт"
+            android:layout_marginLeft="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/text_view_bottom"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewWelcome"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:paddingBottom="2dp"
+            android:text="Өнөөдрийн хийх зүйлс"
+            android:textColor="#AAFF00"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/text_view_bottom"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/min_60" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/text_view_bottom"
+            android:layout_toRightOf="@id/image1"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/fire" />
+
+        <ScrollView
+            android:id="@+id/scrollViewContainer"
+            android:layout_width="match_parent"
+            android:layout_height="526dp"
+            android:layout_below="@id/image1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/main_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:text="ДЭМБ-ын судалгаагаар хүмүүсийн 60-85 хувь нь эрүүл мэнддээ ашиг тустай дасгал
+хөдөлгөөн хийдэггүй гэсэн дүгнэлт гарчээ. Хүн өдрийн 5-8 цагт байнга хөдөлгөөнтэй
+байхыг эмч нар зөвлөдөг. Ингэснээр биеийн идэвх хөдөлгөөн мэдрэмжтэй байдал
+сэргэж өөртөө итгэх итгэлтэй болдог аж. Иймээс та өдөрт багаар бодоход 30 минут
+дасгал хөдөлгөөн хийх хэрэгтэй." />
+
+                <LinearLayout
+                    android:id="@+id/container_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/main_text"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/work_1"
+                        android:scaleType="centerCrop"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="Хөлний үндсэн дасгал" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/container_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/container_1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/work_2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="Цээжны дээш шахалт" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/container_2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/work_3" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="Ерөнхий суниалт" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/container_3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/work_4" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="Хөлний сунгалт" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/container_4"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/work_5" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="Турникнаас татах" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/container_5"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_6"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/work_6" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="Хэвлийн дасгал" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/container_6"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_7"
+                        android:layout_width="80dp"
+                        android:scaleType="centerCrop"
+                        android:layout_height="80dp"
+                        android:src="@drawable/work_7" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="Бүтэн биеийн суниалт" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@id/container_7"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/image_8"
+                        android:scaleType="centerCrop"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/work_8" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center_vertical"
+                        android:text="Нурууны үндсэн дасгал" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/workout"
+            android:layout_width="226dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="0dp"
+            android:backgroundTint="#AAFF00"
+            android:text="Дасгал эхлэх"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
+    </RelativeLayout>
 </RelativeLayout>

@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         progressAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                // Update the progress text during the animation
+
                 int progress = (int) animation.getAnimatedValue();
                 progressText.setText(progress + "%");
             }

@@ -1,10 +1,12 @@
 package com.example.erkabiydaalt;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -24,10 +26,20 @@ public class FemaleHomeActivity extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("users");
 
-        displayWelcomeMessage("Female");
+        displayWelcomeMessage();
+
+        Button startWorkoutButton = findViewById(R.id.workout);
+        startWorkoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(FemaleHomeActivity.this, Female_Workout_Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    private void displayWelcomeMessage(final String gender) {
+    private void displayWelcomeMessage() {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
             String userId = currentUser.getUid();
@@ -38,21 +50,20 @@ public class FemaleHomeActivity extends AppCompatActivity {
                         User user = snapshot.getValue(User.class);
                         if (user != null) {
                             String userName = user.getName();
-                            updateWelcomeMessage(userName, gender);
+                            updateWelcomeMessage(userName);
                         }
                     }
                 }
 
                 @Override
                 public void onCancelled(@NonNull DatabaseError error) {
-                    // Handle the error
                 }
             });
         }
     }
 
-    private void updateWelcomeMessage(String userName, String gender) {
+    private void updateWelcomeMessage(String userName) {
         TextView textViewWelcome = findViewById(R.id.textViewWelcome);
-        textViewWelcome.setText("Welcome, " + userName + " (" + gender + ")!");
+        textViewWelcome.setText("Тавтай морил " + userName);
     }
 }
