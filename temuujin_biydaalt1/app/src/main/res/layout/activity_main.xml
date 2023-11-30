@@ -1,0 +1,32 @@
+<!-- activity_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/toji" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:indeterminate="false"
+        android:progress="0"
+        android:max="100"
+        android:progressTint="@android:color/darker_gray"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/progressText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textSize="12sp"
+        android:textColor="@android:color/black"
+        android:layout_centerInParent="true"/>
+</RelativeLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "742046758105",
+    "project_id": "biydaalt1temka",
+    "storage_bucket": "biydaalt1temka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742046758105:android:abc691b0db31e4260cbac8",
+        "android_client_info": {
+          "package_name": "com.example.temuujin_biydaalt1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBGGgNgNZqAyex3PuYEbkoGV4PsMh-vR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/toji" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/resultTextView"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:columnCount="3"
+        android:rowCount="3" />
+
+
+    <EditText
+        android:id="@+id/playerXEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gridLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="27dp"
+        android:hint="Player X"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/playerOEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playerXEditText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:hint="Player X"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:visibility="visible"
+        android:text=""/>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resultTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:text="Шинээр эхлэх"/>
+
+    <Button
+        android:id="@+id/showResultsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/resetButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Үр дүн харах"/>
+
+</RelativeLayout>

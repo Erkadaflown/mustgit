@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/toji" />
+
+    <EditText
+        android:id="@+id/editTextPhoneLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Утасны дугаар"
+        android:textColorHint="#80FFFFFF"
+        android:layout_marginTop="220dp"
+        android:paddingBottom="25dp"
+        android:paddingLeft="25dp"
+        android:textColor="@color/white"
+        android:paddingRight="25dp"/>
+
+    <EditText
+        android:id="@+id/editTextPasswordLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPhoneLogin"
+        android:inputType="textPassword"
+        android:hint="Нууц үг"
+        android:textColorHint="#80FFFFFF"
+        android:textColor="@color/white"
+        android:padding="25dp"/>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPasswordLogin"
+        android:layout_marginTop="16dp"
+        android:text="Нэвтрэх"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:backgroundTint="#40CCCCCC"
+        android:radius="100dp"/>
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLogin"
+        android:layout_marginTop="8dp"
+        android:text="Бүртгүүлэх"
+        android:backgroundTint="#40CCCCCC"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:radius="8dp"/>
+</RelativeLayout>
