@@ -34,7 +34,7 @@ public class MaleHomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Add the logic to jump to the desired layout/activity here
                 // For example, if you have another activity called WorkoutActivity:
-                Intent intent = new Intent(MaleHomeActivity.this, Male_Workout_Activity.class);
+                Intent intent = new Intent(MaleHomeActivity.this, MaleHomeActivity.class);
                 startActivity(intent);
             }
         });

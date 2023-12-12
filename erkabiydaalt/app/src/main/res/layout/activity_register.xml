@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/download" />
+        android:src="@drawable/wallpaper" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -44,38 +44,23 @@
         android:textColor="@color/white"
         android:padding="25dp"/>
 
-    <RadioGroup
-        android:id="@+id/radioGroupGender"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/datePickerButton"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:text="JAN 01 2020"
+        android:textSize="16sp"
+        android:textColor="#80FFFFFF"
+        style="?android:spinnerStyle"
         android:layout_below="@id/editTextPassword"
-        android:layout_marginTop="8dp"
-        android:padding="25dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radioButtonMale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:buttonTint="@color/radioButtonColor"
-            android:text="Эрэгтэй"/>
-
-        <RadioButton
-            android:id="@+id/radioButtonFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:buttonTint="@color/radioButtonColor"
-            android:text="Эмэгтэй"/>
-
-    </RadioGroup>
+        android:layout_marginTop="10dp"
+        android:onClick="openDatePicker"/>
 
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/radioGroupGender"
+        android:layout_below="@id/datePickerButton"
         android:layout_marginTop="16dp"
         android:text="Бүртгүүлэх"
         android:textColor="#FFFFFF"

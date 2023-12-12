@@ -7,6 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -24,8 +25,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import android.view.MotionEvent;
-
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -65,9 +64,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        EditText editTextPhoneLogin = findViewById(R.id.editTextPhoneLogin);
-
-
         buttonGoToRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,29 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    // Login successful, get user's gender from database
-                                    String userId = firebaseAuth.getCurrentUser().getUid();
-                                    databaseReference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                            if (snapshot.exists()) {
-                                                User user = snapshot.getValue(User.class);
-                                                if (user != null) {
-                                                    String gender = user.getGender();
-                                                    navigateToHome(gender);
-                                                } else {
-                                                    showErrorMessage("Дата-г хүлээн авхад алдаа гарлаа");
-                                                }
-                                            } else {
-                                                showErrorMessage("Хэрэглэгчийн мэдээлэл олдсонгүй");
-                                            }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
-                                            showErrorMessage("Өгөгдөлийн сангийн алдаа: " + error.getMessage());
-                                        }
-                                    });
+                                    navigateToHome();
                                 } else {
                                     showErrorMessage("Нэвтэрхэд алдаа гарлаа. Нууц үг дугаараа шалгана уу");
                                 }
@@ -123,19 +97,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void navigateToHome(String gender) {
-        Class<?> homeActivityClass;
-        if ("Male".equals(gender)) {
-            homeActivityClass = MaleHomeActivity.class;
-        } else if ("Female".equals(gender)) {
-            homeActivityClass = FemaleHomeActivity.class;
-        } else {
-            showErrorMessage("Хүйс тодорхойлход алдаа гарлаа: " + gender);
-            return;
-        }
-
-        Intent intent = new Intent(LoginActivity.this, homeActivityClass);
-        intent.putExtra("GENDER", gender);
+    private void navigateToHome() {
+        Intent intent = new Intent(LoginActivity.this, MaleHomeActivity.class);
         startActivity(intent);
         finish();
     }

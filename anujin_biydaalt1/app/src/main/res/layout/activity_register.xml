@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBackgroundRegister"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/loading" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Нэр"
+        android:textColorHint="#80FFFFFF"
+        android:layout_marginTop="150dp"
+        android:paddingBottom="25dp"
+        android:paddingLeft="25dp"
+        android:textColor="@color/white"
+        android:paddingRight="25dp"/>
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextName"
+        android:layout_marginTop="8dp"
+        android:hint="Утасны дугаар"
+        android:textColorHint="#80FFFFFF"
+        android:padding="25dp"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPhone"
+        android:layout_marginTop="8dp"
+        android:inputType="textPassword"
+        android:hint="Цууц үг"
+        android:textColorHint="#80FFFFFF"
+        android:textColor="@color/white"
+        android:padding="25dp"/>
+
+    <Button
+        android:id="@+id/datePickerButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="JAN 01 2020"
+        android:textSize="16sp"
+        android:textColor="#80FFFFFF"
+        style="?android:spinnerStyle"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="10dp"
+        android:onClick="openDatePicker"/>
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/datePickerButton"
+        android:layout_marginTop="16dp"
+        android:text="Бүртгүүлэх"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:backgroundTint="#40CCCCCC"
+        android:radius="8dp"/>
+
+    <Button
+        android:id="@+id/buttonLoginFromRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonRegister"
+        android:layout_marginTop="8dp"
+        android:text="Нэвтрэх"
+        android:backgroundTint="#40CCCCCC"
+        android:textColor="#FFFFFF"
+        android:padding="16dp"
+        android:radius="8dp"/>
+</RelativeLayout>

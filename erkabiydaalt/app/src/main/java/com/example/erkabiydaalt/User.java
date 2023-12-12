@@ -3,16 +3,17 @@ package com.example.erkabiydaalt;
 public class User {
     private String name;
     private String phone;
-    private String gender;
+    private String dateOfBirth; // Add this line
 
     public User() {
     }
 
-    public User(String name, String phone, String gender) {
+    public User(String name, String phone, String dateOfBirth) {
         this.name = name;
         this.phone = phone;
-        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
     }
+
 
     public String getName() {
         return name;
@@ -22,7 +23,7 @@ public class User {
         return phone;
     }
 
-    public String getGender() {
-        return gender;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 }
