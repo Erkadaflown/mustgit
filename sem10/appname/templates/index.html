@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic Survival Prediction</title>
+</head>
+<body>
+    <h1>Welcome to the Titanic Survival Prediction App</h1>
+    <form action="/result" method="post">
+        {% csrf_token %}
+        <!-- Include form fields for the input data required by your ML model -->
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
