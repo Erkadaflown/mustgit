@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Show a toast message when the button is pressed
-                Toast.makeText(HomeActivity.this, "This is noff", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, "eme bol tanii", Toast.LENGTH_SHORT).show();
             }
         });
     }
