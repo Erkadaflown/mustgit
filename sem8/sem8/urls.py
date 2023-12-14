@@ -1,5 +1,5 @@
 """
-URL configuration for sem8_django project.
+URL configuration for sem8 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,11 +15,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from .views import YourTemplateView
-
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', YourTemplateView.as_view(), name='index'),
+    path('sem8_app/', include('sem8_app.urls')),
 ]

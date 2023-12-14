@@ -87,6 +87,19 @@ class CarParking:
         if not found:
             return f"There is no car with exit number {car.get_dugaar()} in the parking lot."
 
+    def display_remaining_cars(self):
+        if self.zogsool.isEmpty():
+
+            #object iin empty bish uguig shalgaad hoosong gargaj irsen
+            print("zogsool huuson bn.")
+        else:
+            print("Iim mashinuud uldsen bn:")
+            #tuhain obeject in stack deer str data ga hadgalt baiga ba teriig ni reverse hiiged ar talaas herev baival print hiij haruulj bolno
+            print(zogsool.stack)
+            for car in reversed(self.zogsool.stack):
+                print(f"Mashinii dugaar: {car.get_dugaar()}, Chiglel: {car.get_chiglel()}")
+
+
 def main():
     capacity = 10 
     car_parking = CarParking(capacity)
@@ -103,6 +116,7 @@ def main():
             elif operation == 'D':
                 result = car_parking.process(car)
                 print(result)
+    car_parking.display_remaining_cars()
 
 if __name__ == "__main__":
     main()
